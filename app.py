@@ -7,8 +7,7 @@ st.title("📟 CMD Output 数据库查看器")
 
 # 使用原生 sqlite3 读取数据并转换为 DataFrame
 with sqlite3.connect("cmd_output.db") as conn:
-    # df = pd.read_sql_query("SELECT * FROM your_table_name ORDER BY id DESC;", conn)
-    df = pd.read_sql_query("SELECT * FROM cmd_output_sql ORDER BY id DESC;", conn)
+    df = pd.read_sql_query("SELECT * FROM cmd_output_sql ORDER BY id DESC;", conn) # cmd_output_sql是数据库的表格名字
 
 # 优雅地在网页上展示数据
 st.dataframe(df, width='stretch')
