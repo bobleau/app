@@ -2,6 +2,9 @@ import sqlite3
 import pandas as pd
 import streamlit as st
 
+# 切换到访客视图，屏蔽网页右上角开发者按钮和“Deploy”
+# st.set_option("client.toolbarMode", "viewer")
+
 st.set_page_config(page_title="CMD Output Viewer", layout="wide")
 st.title("📟 CMD Output 数据库查看器")
 
