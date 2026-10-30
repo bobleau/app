@@ -3,6 +3,7 @@ import streamlit as st
 # 1. Define all the pages, point them to their file paths, and assign icons
 page_app = st.Page("views/app.py", title="app", icon="📊", default=True)
 page_app_json = st.Page("views/app_json.py", title="app_json", icon="📊")
+page_students = st.Page("views/students.py", title="学生身高", icon="📊")
 page_dashboard = st.Page("views/dashboard.py", title="Dashboard", icon="📊")
 page_sales = st.Page("views/sales.py", title="Sales Report", icon="📈")
 page_inventory = st.Page("views/inventory.py", title="Inventory Management", icon="📦")
@@ -14,6 +15,7 @@ navigation_menu = st.navigation({
     "Core Apps": [
         page_app,
         page_app_json,
+        page_students,
         page_dashboard, 
         page_sales, 
         page_inventory
