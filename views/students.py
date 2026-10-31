@@ -30,15 +30,15 @@ if "student_db" not in st.session_state:
     st.session_state.student_db = load_data()
 
 # 4. Two-Column Layout (Form on Left, Dashboard on Right)
-input_col, output_col = st.columns(2)
+input_col, output_col = st.columns([1, 2])
 
 with input_col:
     st.subheader("📥 Student Data Form")
     
     with st.form(key="student_entry_form", clear_on_submit=True):
         name = st.text_input("Full Name:", placeholder="e.g., Jane Smith").strip()
-        height = st.number_input("Height (cm):", min_value=50.0, max_value=250.0, value=165.0, step=0.5)
-        weight = st.number_input("Weight (kg):", min_value=10.0, max_value=200.0, value=55.0, step=0.5)
+        height = st.number_input("Height (cm):", min_value=120.0, max_value=150.0, value=135.0, step=0.5)
+        weight = st.number_input("Weight (kg):", min_value=20.0, max_value=50.0, value=30.0, step=0.5)
         
         submit_button = st.form_submit_button(label="Submit and Save Data", type="primary")
         
@@ -95,7 +95,7 @@ with output_col:
             # The key parameter allows Streamlit to track UI state changes
             edited_df = st.data_editor(
                 df, 
-                use_container_width=True, 
+                width='stretch', 
                 hide_index=True,
                 key="student_table_editor"
             )
